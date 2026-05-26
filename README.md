@@ -29,12 +29,8 @@ Traditional control charts signal when a process has shifted away from normal be
 A one-class SVM is trained on Phase I in-control observations. Its signed decision score is appended to the standardised process variables to form an augmented monitoring vector, which is then tracked by MEWMA:
 
 ```
-Inline: $z_t = \lambda y_t + (1-\lambda)z_{t-1}$
-
-Block:
-$$
-T^2_t = (z_t - \mu_y)^\top \Sigma_z^{-1} (z_t - \mu_y)
-$$
+z_t = λ·y_t + (1 − λ)·z_{t−1}
+T²_t = (z_t − μ_y)ᵀ · Σ_z⁻¹ · (z_t − μ_y)
 ```
 
 An alarm fires when T²_t exceeds the calibrated control limit `h`.
